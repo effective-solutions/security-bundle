@@ -94,7 +94,11 @@ class Role extends BaseRole
 
 ```
 
-- Add following code in your 'security.yml' file
+- Run following code to create your user and role tables in your database
+
+`php app/console doctrine:schema:update --force`
+
+- Add following code in your `security.yml` file
 
 ```
 security:
