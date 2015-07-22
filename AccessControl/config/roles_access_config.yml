@@ -1,0 +1,4 @@
+# Sonata admin
+
+#admin_base_dataaccess_customer_create:
+#  - ROLE_SUPER_ADMIN
