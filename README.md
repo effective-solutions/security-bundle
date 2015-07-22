@@ -12,7 +12,7 @@ After the installation add following in your AppKernel.php file
 
 ## Usage
 
-1. Create `User.php` file in your Entity folder and add following code.
+- Create `User.php` file in your Entity folder and add following code.
 
 ```
 <?php
@@ -74,7 +74,7 @@ class User extends BaseUser
 }
 ```
 
-2. Create `Role.php` file in your Entity folder and add following code.
+- Create `Role.php` file in your Entity folder and add following code.
 
 ```
 <?php
@@ -94,7 +94,7 @@ class Role extends BaseRole
 
 ```
 
-3. Add following code in your 'security.yml' file
+- Add following code in your 'security.yml' file
 
 ```
 security:
@@ -140,8 +140,8 @@ security:
 
 ```
 
-4. Run following code in your command line to configure admin user. Admin username is admin and password is admin
+- Run following code in your command line to configure admin user. Admin username is admin and password is admin
 
 `php app/console register`
 
-5. Then go to http://localhost/YourAppName/web/app_dev.php/login
+- Then go to `http://localhost/YourAppName/web/app_dev.php/login`
