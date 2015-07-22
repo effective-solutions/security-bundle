@@ -8,7 +8,7 @@ Use following command in command line to install Effective Solutions Security Bu
 
 After the installation add following in your AppKernel.php file
 
-'new EffectiveSolutions\SecurityBundle\EffectiveSolutionsSecurityBundle(),'
+`new EffectiveSolutions\SecurityBundle\EffectiveSolutionsSecurityBundle(),`
 
 ## Usage
 
@@ -145,3 +145,5 @@ security:
 `php app/console register`
 
 - Then go to `http://localhost/YourAppName/web/app_dev.php/login`
+
+Thank you for using Effective Solutions Security Bundle. Powered By [EffectiveSolutions.lk](http://effectivesolutions.lk)
