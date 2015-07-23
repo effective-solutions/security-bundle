@@ -150,4 +150,43 @@ security:
 
 - Then go to `http://localhost/YourAppName/web/app_dev.php/login`
 
+## With Sonata Admin Bundle
+
+If you are using `Sonata Admin Bundle`, create BaseAdmin class and extend your admin classes from BaseAdmin class.
+Overide `isGranted` method in the BaseAdmin class as follows.
+
+```
+public function isGranted($name,$object=null){
+
+        // overridden by effective security bundle
+        if(!$this->getService('effective_security.role_handler')->isRouteGranted($this->getBaseRouteName()))
+            return false;
+        if(is_array($name))
+        {
+            foreach($name as $element)
+            {
+                if(!$this->getService('effective_security.role_handler')->isRouteGranted($this->getBaseRouteName().'_'.strtolower($element)))
+                    return false;
+            }
+        }
+        else
+        {
+            if(!$this->getService('effective_security.role_handler')->isRouteGranted($this->getBaseRouteName().'_'.strtolower($name)))
+                return false;
+        }
+
+        return parent::isGranted($name,$object);
+    }
+```
+
+Create `roles_access_config.yml` in your app/config folder and you can write access control logic in that. For example,
+
+```
+admin_base_dataaccess_customer_create:
+  - ROLE_SUPER_ADMIN
+```
+
+If you want to secure a controller, you can write route alias as above and call `secure()` in the Controller or `isSecure()`
+to check if the user has permission to access that controller.
+
 Thank you for using Effective Solutions Security Bundle. Powered By [EffectiveSolutions.lk](http://effectivesolutions.lk)

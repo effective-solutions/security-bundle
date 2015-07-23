@@ -18,7 +18,8 @@ class RolesHandler extends Base
     protected function loadRolesAccessConfig()
     {
         $yaml = new Parser();
-        return $yaml->parse(file_get_contents(__DIR__.'/config/roles_access_config.yml'));
+//        return $yaml->parse(file_get_contents(__DIR__.'/config/roles_access_config.yml'));
+        return $yaml->parse(file_get_contents($this->getContainer()->get('Kernel')->getRootdir().'/config/roles_access_config.yml'));
     }
 
     /**

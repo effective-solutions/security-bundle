@@ -7,6 +7,7 @@
  */
 
 namespace EffectiveSolutions\SecurityBundle\AccessControl;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class Base
@@ -15,12 +16,14 @@ class Base
     private $authorizationChecker;
     private $session;
     private $request;
+    private $container;
 
-    public function __construct($tokenStorage,$authorizationChecker,$session,$request){
+    public function __construct($tokenStorage,$authorizationChecker,$session,$request,Container $container){
         $this->tokenStorage = $tokenStorage;
         $this->authorizationChecker = $authorizationChecker;
         $this->session = $session;
         $this->request = $request;
+        $this->container = $container;
     }
 
     /**
@@ -72,5 +75,13 @@ class Base
      */
     protected function getUser(){
         return $this->getTokenStorage()->getToken()->getUser();
+    }
+
+    /**
+     * @return Container
+     */
+    protected function getContainer()
+    {
+        return $this->container;
     }
 }

@@ -1,5 +1,5 @@
 services:
-    base_security.role_handler:
+    effective_security.role_handler:
         class: EffectiveSolutions\SecurityBundle\AccessControl\RolesHandler
         scope: "request"
-        arguments: ["@security.token_storage", "@security.authorization_checker", "@session", "@request"]
+        arguments: ["@security.token_storage", "@security.authorization_checker", "@session", "@request","@service_container"]
