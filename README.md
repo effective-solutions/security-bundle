@@ -6,9 +6,17 @@ Use following command in command line to install Effective Solutions Security Bu
 
 `php composer.phar require effective-solutions/security-bundle`
 
-After the installation add following in your AppKernel.php file
+After the installation add following in your `AppKernel.php` file
 
 `new EffectiveSolutions\SecurityBundle\EffectiveSolutionsSecurityBundle(),`
+
+Add following in `app/config/routing.yml` file
+
+```
+effective_solutions_security:
+    resource: "@EffectiveSolutionsSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+```
 
 ## Usage
 
