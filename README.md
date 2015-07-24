@@ -111,14 +111,14 @@ class Role extends BaseRole
 ```
 security:
     encoders:
-        Base\PageBundle\Entity\User:
+        Base\DataAccessBundle\Entity\User:
             algorithm: sha512
             cost: 10
 
     providers:
         in_db:
             entity:
-                class: Base\PageBundle\Entity\User
+                class: Base\DataAccessBundle\Entity\User
                 property: username
         in_memory:
             memory:
