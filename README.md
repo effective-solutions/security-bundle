@@ -49,10 +49,10 @@ class User extends BaseUser
     /**
      * Set role
      *
-     * @param \Base\PageBundle\Entity\Role $role
+     * @param \Base\DataAccessBundle\Entity\Role $role
      * @return User
      */
-    public function setRole(\Base\PageBundle\Entity\Role $role = null)
+    public function setRole(\Base\DataAccessBundle\Entity\Role $role = null)
     {
         $this->role = $role;
 
@@ -62,7 +62,7 @@ class User extends BaseUser
     /**
      * Get role
      *
-     * @return \Base\PageBundle\Entity\Role
+     * @return \Base\DataAccessBundle\Entity\Role
      */
     public function getRole()
     {
